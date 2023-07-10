@@ -1,0 +1,91 @@
+import java. util.Scanner;
+
+public class percentile {
+    public static void main(String[] args) {
+
+ //1. (to find out whether a student passes or fails;
+         if it requires a total of 45% and at least 35% in each subject to pass.
+           Assume 3 subjects and take marks as input from the user.):
+
+         byte m1, m2, m3;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your marks in Physics");
+        m1 = sc.nextByte();
+
+        System.out.println("Enter your marks in Chemistry");
+        m2= sc.nextByte();
+
+        System.out.println("Enter your marks in Mathematics");
+        m3 = sc.nextByte();
+        float avg = (m1+m2+m3)/3.0f;
+        System.out.println("Your Overall percentage is: " + avg);
+        if(avg>=45 && m1>=35 && m2>=35 && m3>=35){
+            System.out.println("Congratulations, You have been promoted");
+        }
+        else{
+            System. out.println("Sorry, You have not been promoted! Please try again.");
+        }
+
+// 2. Calculate income tax paid by an employee to the government as per the slabs mentioned below:
+
+                         Income Slab	Tax
+                         2.5L – 5.0L  	5%
+                         5.0L – 10.0L 	20%
+                          Above 10.0L	30%
+
+Scanner sce = new Scanner(System.in);
+        System.out.println("Enter your income in Lakhs per annum");
+        float tax = 0;
+        float income = sce.nextFloat();
+        if(income<=2.5){
+            tax = tax + 0;
+        }
+        else if(income>2.5f && income <= 5f){
+            tax = tax + 0.05f * (income - 2.5f);
+        }
+        else if(income>5f && income <= 10.0f){
+            tax = tax + 0.05f * (5.0f - 2.5f);
+            tax = tax + 0.2f * (income - 5f);
+        }
+        else if(income>10.0f){
+            tax = tax + 0.05f * (5.0f - 2.5f);
+            tax = tax + 0.2f * (10.0f - 5f);
+            tax = tax + 0.3f * (income - 10.0f);
+        }
+
+        System.out.println("The total tax paid by the employee is: " + tax);
+
+//3. A Java program to find out the day of the week given the number [1 for Monday, 2 for Tuesday … and so on!]:
+
+    Scanner scc = new Scanner(System.in);
+        int day = scc.nextInt();
+
+        switch (day){
+            case 1 -> System. out.println("Monday");
+            case 2 -> System. out.println("Tuesday");
+            case 3 -> System. out.println("Wednesday");
+            case 4 -> System. out.println("Thursday");
+            case 5 -> System. out.println("Friday");
+            case 6 -> System. out.println("Saturday");
+            case 7 -> System. out.println("Sunday");
+        }
+
+//4.  to find out the type of website from the URL:
+
+  Scanner scs = new Scanner(System.in);
+        String website = scs.next();
+        if(website.endsWith(".org")){
+            System.out.println("This is an organizational website");
+        }
+        else if(website.endsWith(".com")){
+            System.out.println("This is a Commercial website");
+        }
+        else if(website.endsWith(".in")){
+            System.out.println("This is an Indian website");
+        }
+        Random r = new Random();
+        int a = r.nextInt();
+        System.out.println(a);
+
+    }
+}
