@@ -1,0 +1,89 @@
+Public class array {
+    public static void main(String[] args) {
+      
+      // 1.whether a given integer is present in an array or not.
+
+        float [] mark = {45.7f, 67.8f, 63.4f, 99.2f, 100.0f};
+        float num = 45.57f;
+        boolean isInArray = false;
+        for(float element:mark){
+            if(num==element){
+                isInArray = true;
+                break;
+            }
+        }
+        if(isInArray){
+            System.out.println("The value is present in the array");
+        }
+        else{
+            System.out.println("The value is not present in the array");
+        }
+
+      // 2.the average marks from an array containing marks of all students in physics using a for-each loop.
+
+       float [] mar = {45.7f, 67.8f, 63.4f, 99.2f, 100.0f};
+        float sums = 0;
+        for(float element:mar){
+            sums = sums + element;
+        }
+        System.out.println("The value of average marks is " + sums/mar.length);
+
+      // 3.a Java program to add two matrices of size 2x3:
+      
+//declare the arrays
+        int [][] mat1 = {{1, 2, 3},
+                         {4, 5, 6}};
+        int [][] mat2 = {{2, 6, 13},
+                         {3, 7, 1}};
+        int [][] result = {{0, 0, 0},
+                           {0, 0, 0}};
+
+        for (int i=0;i<mat1.length;i++){ // row number of times
+            for (int j=0;j<mat1[i].length;j++) { // column number of time
+                System.out.format(" Setting value for i=%d and j=%d\n", i, j);
+                result[i][j] = mat1[i][j] + mat2[i][j];
+            }
+        }
+      // 4.printing the 2-d array
+        for (int i=0;i<mat1.length;i++){ // row number of times
+            for (int j=0;j<mat1[i].length;j++) { // column number of time
+                System.out.print(result[i][j] + " ");
+                result[i][j] = mat1[i][j] + mat2[i][j];
+            }
+            System.out.println(""); // Prints a new line
+        }
+
+      // 5.to reverse an array
+
+           int [] arr = {1, 21, 3, 4, 5, 34, 67};
+        int l = arr.length;
+        int n = Math.floorDiv(l, 2);
+        int temp;
+
+        for(int i=0; i<n; i++){
+            // Swap a[i] and a[l-1-i]
+            // a   b   temp
+            // |4| |3| ||
+            temp = arr[i];
+            arr[i] = arr[l-i-1];
+            arr[l-i-1] = temp;
+        }
+
+        for(int element: arr){
+            System.out.print(element + " ");
+        }
+     // 6.to find the maximum element in an array
+
+       int [] array = {3, 100, 69, 495, 78, 34, 37};
+        int max = Integer.MIN_VALUE;
+        for(int e: array){
+            if(e>max){
+                max = e;
+            }
+        }
+        System.out.println("the value of the maximum element in this array is: "+ max);
+
+
+      
+        }
+        }
